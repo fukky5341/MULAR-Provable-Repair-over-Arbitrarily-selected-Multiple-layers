@@ -1,0 +1,916 @@
+=== Repair Test Log ===
+Start time: 2026-10-28 03:09:19 UTC
+Run: 7/10
+Repair task: Local Robustness
+Repair mode: lp_ibp
+Network: gtsrb_cnn
+
+Target label: None
+Number of v-polytopes: 10
+Perturbation distance (eps): 0.00392156862745098
+Perturbation pick: all
+
+Repair layer range: 2 to 7
+Modifiable layers: [2, 5, 7]
+
+Modifiable range: 0.5
+Objective parameter regularization: l2
+Objective type: ObjectiveType.POLYTOPE_DISTANCE
+Strength of distance term in objective: 1000
+Strength increase rate for distance term: 1
+Strength of regularization term: 1.0
+Use priority weight: False
+Objective weight for positive region (if not using priority weight): 1000
+Maximum subrepair loops: 4
+
+FL performed: False
+
+
+-----------------------
+=== Repair run 7/10 ===
+-----------------------
+
+Data ids for this repair run: [275, 279, 281, 282, 287, 290, 297, 301, 308, 312]
+
+Input construction time for this run's 10 selected target instances: 5955.77 seconds
+
+Average time per selected repair region for this run: 595.58 seconds
+
+
+===============================================
+Subrepair loop 1/4: modifiable layers [2, 5, 7]
+===============================================
+
+
+------------------------------------
+Repairing layer 2 with strength 1000
+------------------------------------
+
+Collecting safe subspaces for the repaired layer 2...
+-----------------------------------------------------
+
+Building subspace for data_id 275...
+
+Subspace construction time: layer=2, data_id=275, region=base, time=121.72 seconds
+
+Building subspace for data_id 279...
+
+Subspace construction time: layer=2, data_id=279, region=base, time=76.22 seconds
+
+Building subspace for data_id 281...
+
+Subspace construction time: layer=2, data_id=281, region=base, time=75.91 seconds
+
+Building subspace for data_id 282...
+
+Subspace construction time: layer=2, data_id=282, region=base, time=123.47 seconds
+
+Building subspace for data_id 287...
+
+Subspace construction time: layer=2, data_id=287, region=base, time=123.23 seconds
+
+Building subspace for data_id 290...
+
+Subspace construction time: layer=2, data_id=290, region=base, time=123.20 seconds
+
+Building subspace for data_id 297...
+
+Subspace construction time: layer=2, data_id=297, region=base, time=123.11 seconds
+
+Building subspace for data_id 301...
+
+Subspace construction time: layer=2, data_id=301, region=base, time=123.41 seconds
+
+Building subspace for data_id 308...
+
+Subspace construction time: layer=2, data_id=308, region=base, time=123.20 seconds
+
+Building subspace for data_id 312...
+
+Subspace construction time: layer=2, data_id=312, region=base, time=122.65 seconds
+
+Solving the LP model to get repaired parameters for layer 2...
+--------------------------------------------------------------
+
+Reusing subspace bounds for data_id 275, layer 2 (parameters unchanged).
+
+Reusing subspace bounds for data_id 279, layer 2 (parameters unchanged).
+
+Reusing subspace bounds for data_id 281, layer 2 (parameters unchanged).
+
+Reusing subspace bounds for data_id 282, layer 2 (parameters unchanged).
+
+Reusing subspace bounds for data_id 287, layer 2 (parameters unchanged).
+
+Reusing subspace bounds for data_id 290, layer 2 (parameters unchanged).
+
+Reusing subspace bounds for data_id 297, layer 2 (parameters unchanged).
+
+Reusing subspace bounds for data_id 301, layer 2 (parameters unchanged).
+
+Reusing subspace bounds for data_id 308, layer 2 (parameters unchanged).
+
+Reusing subspace bounds for data_id 312, layer 2 (parameters unchanged).
+
+LP model built (288.30 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 50.83 seconds
+
+LP solver found repaired parameters for layer 2. Updating the layer with repaired parameters.
+
+Evaluating the repaired DNN after repairing layer 2...
+------------------------------------------------------
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [24] (predicted class 18, competitor classes [25]) with LP solver in ascending margin order...
+
+Status check after repair for data id 275:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 2...
+  The number of violating dimensions: 2031 (lb), 2048 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [24, 23, 30, 19, 29, 1, 27, 25, 11, 26, 22, 28, 2, 5, 4, 21] (predicted class 18, competitor classes [25, 24, 31, 20, 30, 1, 28, 26, 11, 27, 23, 29, 2, 5, 4, 22]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 279:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 2...
+  The number of violating dimensions: 2038 (lb), 2039 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [0, 1] (predicted class 1, competitor classes [0, 2]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [34] (predicted class 35, competitor classes [34]) with LP solver in ascending margin order...
+
+Status check after repair for data id 281:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 2...
+  The number of violating dimensions: 2036 (lb), 2048 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [34, 37, 33, 35, 40, 38, 39, 20, 28, 6, 9, 12, 23, 25, 13, 36, 41, 3, 5, 10, 31, 18, 30, 7, 11, 26, 2, 24, 15, 4, 16, 8, 19] (predicted class 35, competitor classes [34, 38, 33, 36, 41, 39, 40, 20, 28, 6, 9, 12, 23, 25, 13, 37, 42, 3, 5, 10, 31, 18, 30, 7, 11, 26, 2, 24, 15, 4, 16, 8, 19]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 282:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 2...
+  The number of violating dimensions: 2044 (lb), 2048 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [18, 23, 28, 26, 5, 20, 25, 19, 16, 11, 10, 2, 9, 27, 8, 24, 7, 21, 4, 6, 1, 15, 3, 35, 30, 37, 32, 22, 12, 40, 38, 13, 34, 39, 17] (predicted class 31, competitor classes [18, 23, 28, 26, 5, 20, 25, 19, 16, 11, 10, 2, 9, 27, 8, 24, 7, 21, 4, 6, 1, 15, 3, 36, 30, 38, 33, 22, 12, 41, 39, 13, 35, 40, 17]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [10] (predicted class 30, competitor classes [10]) with LP solver in ascending margin order...
+
+Status check after repair for data id 287:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 2...
+  The number of violating dimensions: 2033 (lb), 2048 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [10, 25, 26, 24, 23, 11, 4, 2, 20, 18, 12, 30, 28, 5, 7, 8, 9, 13, 19, 3, 1, 17, 41, 15, 31, 27, 6, 22, 32, 21, 29, 37, 35, 36, 16, 33, 40, 38, 34, 39, 14] (predicted class 30, competitor classes [10, 25, 26, 24, 23, 11, 4, 2, 20, 18, 12, 31, 28, 5, 7, 8, 9, 13, 19, 3, 1, 17, 42, 15, 32, 27, 6, 22, 33, 21, 29, 38, 36, 37, 16, 34, 41, 39, 35, 40, 14]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [1] (predicted class 1, competitor classes [2]) with LP solver in ascending margin order...
+
+Status check after repair for data id 290:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 2...
+  The number of violating dimensions: 2031 (lb), 2023 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [1, 0] (predicted class 1, competitor classes [2, 0]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [23] (predicted class 28, competitor classes [23]) with LP solver in ascending margin order...
+
+Status check after repair for data id 297:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 2...
+  The number of violating dimensions: 2031 (lb), 2040 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [23, 30] (predicted class 28, competitor classes [23, 31]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 301:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 2...
+  The number of violating dimensions: 2032 (lb), 2047 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [3, 2, 1, 6, 7, 4] (predicted class 5, competitor classes [3, 2, 1, 7, 8, 4]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [3] (predicted class 7, competitor classes [3]) with LP solver in ascending margin order...
+
+Status check after repair for data id 308:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 2...
+  The number of violating dimensions: 2036 (lb), 2030 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [3, 2, 5, 1] (predicted class 7, competitor classes [3, 2, 5, 1]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [35] (predicted class 38, competitor classes [35]) with LP solver in ascending margin order...
+
+Status check after repair for data id 312:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 2...
+  The number of violating dimensions: 2036 (lb), 2047 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [35, 36, 34, 37, 39, 33, 38] (predicted class 38, competitor classes [35, 36, 34, 37, 40, 33, 39]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Repaired DNN still has violations: 0 base region(s), 10 repaired region(s).
+
+Step 1: Layer 2 failed. Trying the next configured layer...
+
+
+------------------------------------
+Repairing layer 5 with strength 1000
+------------------------------------
+
+Collecting safe subspaces for the repaired layer 5...
+-----------------------------------------------------
+
+Building subspace for data_id 275...
+
+Subspace construction time: layer=5, data_id=275, region=base, time=31.52 seconds
+
+Building subspace for data_id 279...
+
+Subspace construction time: layer=5, data_id=279, region=base, time=31.90 seconds
+
+Building subspace for data_id 281...
+
+Subspace construction time: layer=5, data_id=281, region=base, time=31.89 seconds
+
+Building subspace for data_id 282...
+
+Subspace construction time: layer=5, data_id=282, region=base, time=31.77 seconds
+
+Building subspace for data_id 287...
+
+Subspace construction time: layer=5, data_id=287, region=base, time=31.82 seconds
+
+Building subspace for data_id 290...
+
+Subspace construction time: layer=5, data_id=290, region=base, time=32.00 seconds
+
+Building subspace for data_id 297...
+
+Subspace construction time: layer=5, data_id=297, region=base, time=31.73 seconds
+
+Building subspace for data_id 301...
+
+Subspace construction time: layer=5, data_id=301, region=base, time=31.72 seconds
+
+Building subspace for data_id 308...
+
+Subspace construction time: layer=5, data_id=308, region=base, time=31.72 seconds
+
+Building subspace for data_id 312...
+
+Subspace construction time: layer=5, data_id=312, region=base, time=31.95 seconds
+
+Solving the LP model to get repaired parameters for layer 5...
+--------------------------------------------------------------
+
+LP model built (735.79 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 3.20 seconds
+
+LP solver found repaired parameters for layer 5. Updating the layer with repaired parameters.
+
+Evaluating the repaired DNN after repairing layer 5...
+------------------------------------------------------
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 275:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 5...
+  The number of violating dimensions: 75 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [24, 23] (predicted class 18, competitor classes [25, 24]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 279:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 5...
+  The number of violating dimensions: 97 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [0, 1] (predicted class 1, competitor classes [0, 2]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 281:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 5...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [34, 37, 33, 35, 40, 38, 39, 12, 13] (predicted class 35, competitor classes [34, 38, 33, 36, 41, 39, 40, 12, 13]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 282:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 5...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [18, 23, 28, 26, 5, 16] (predicted class 31, competitor classes [18, 23, 28, 26, 5, 16]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 287:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 5...
+  The number of violating dimensions: 98 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [10, 25, 26, 24, 23, 11, 4, 2, 20, 18, 12, 30, 28, 5, 7, 8, 13, 17] (predicted class 30, competitor classes [10, 25, 26, 24, 23, 11, 4, 2, 20, 18, 12, 31, 28, 5, 7, 8, 13, 17]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 290:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 5...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [1, 0] (predicted class 1, competitor classes [2, 0]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 297:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 5...
+  The number of violating dimensions: 73 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [23] (predicted class 28, competitor classes [23]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 301:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 5...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [3, 2, 1, 6, 7] (predicted class 5, competitor classes [3, 2, 1, 7, 8]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 308:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 5...
+  The number of violating dimensions: 91 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [3, 2, 5] (predicted class 7, competitor classes [3, 2, 5]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 312:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 5...
+  The number of violating dimensions: 87 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [35, 36, 34, 37] (predicted class 38, competitor classes [35, 36, 34, 37]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Repaired DNN still has violations: 0 base region(s), 9 repaired region(s).
+
+Step 2: Layer 5 failed. Trying the next configured layer...
+
+
+------------------------------------
+Repairing layer 7 with strength 1000
+------------------------------------
+
+Last layer repair: skipping safe subspace construction.
+-------------------------------------------------------
+
+Solving the LP model to get repaired parameters for layer 7...
+--------------------------------------------------------------
+
+LP model built (628.67 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 0.07 seconds
+
+LP solver found repaired parameters for layer 7. Updating the layer with repaired parameters.
+
+Evaluating the repaired DNN after repairing layer 7...
+------------------------------------------------------
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 275:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 279:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 281:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 282:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 287:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 290:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 297:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 301:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 308:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 312:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Repaired DNN satisfies the specification for all base and repaired regions.
+
+Step 3: Successfully repaired the DNN!
+
+Total repair time: 6296.71 seconds
+
+Subrepair loops completed: 1
+
+Total steps: 3
+
+Evaluating the repaired DNN after repair...
+-------------------------------------------
+
+Original DNN accuracy on the evaluation dataset: 0.7334 (9263/12630)
+
+Repaired DNN accuracy on the evaluation dataset: 0.2751 (3474/12630)
+
+Generalization check for data id 275...
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0043): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0051): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0059): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0067): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0078): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0098): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0118): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0157): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Generalization check for data id 279...
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0043): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0051): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0059): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0067): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0078): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0098): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0118): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0157): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Generalization check for data id 281...
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0043): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0051): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0059): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0067): 
+0.9800 (49/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0078): 
+0.9800 (49/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0098): 
+0.9400 (47/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0118): 
+0.9400 (47/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0157): 
+0.9200 (46/50) -> 1.0000 (50/50)
+
+Generalization check for data id 282...
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0043): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0051): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0059): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0067): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0078): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0098): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0118): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0157): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Generalization check for data id 287...
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0043): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0051): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0059): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0067): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0078): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0098): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0118): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0157): 
+0.9800 (49/50) -> 1.0000 (50/50)
+
+Generalization check for data id 290...
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0043): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0051): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0059): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0067): 
+0.9800 (49/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0078): 
+0.9800 (49/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0098): 
+0.9800 (49/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0118): 
+0.9800 (49/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0157): 
+0.9600 (48/50) -> 1.0000 (50/50)
+
+Generalization check for data id 297...
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0043): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0051): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0059): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0067): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0078): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0098): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0118): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0157): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Generalization check for data id 301...
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0043): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0051): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0059): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0067): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0078): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0098): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0118): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0157): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Generalization check for data id 308...
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0043): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0051): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0059): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0067): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0078): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0098): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0118): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0157): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Generalization check for data id 312...
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0043): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0051): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0059): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0067): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0078): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0098): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0118): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0157): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+---------------------------------
+=== Summary of Repair Results ===
+---------------------------------
+
+Run 7: Original accuracy = 0.7334125098970705, Repaired accuracy = 0.27505938242280287

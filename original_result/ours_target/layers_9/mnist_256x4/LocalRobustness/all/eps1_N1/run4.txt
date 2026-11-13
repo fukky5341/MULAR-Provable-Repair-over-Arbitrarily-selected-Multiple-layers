@@ -1,0 +1,87 @@
+=== Repair Test Log ===
+Repair task: Local Robustness
+Repair mode: last_layer_ibp
+Run: 4/20
+Network: mnist_256x4
+
+Target label: None
+Number of v-polytopes: 1
+Perturbation distance (eps): 0.00392156862745098
+Perturbation pick: all
+
+Repair layer selection: range
+Repair layer range: 9 to 9
+Modifiable layers: [9]
+Modifiable range: 0.5
+
+
+-----------------------
+=== Repair run 4/20 ===
+-----------------------
+
+Data ids for repair regions in this run: [726]
+
+
+----------------
+Repairing step 1
+----------------
+
+LP model built (1.43 seconds). Starting optimization...
+
+LP model solved (0.00 seconds).
+
+LP solver found a solution. Updating the repaired DNN...
+
+Evaluating the repaired DNN after repair...
+-------------------------------------------
+
+Checking violation on the whole repaired DNN
+
+  repaired region: data id 726 (1/1)
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Successfully repaired the DNN!
+
+Total repair time: 2.75 seconds
+
+Repair completed in 1 steps.
+
+Evaluating the repaired DNN after repair...
+-------------------------------------------
+
+Original DNN accuracy on the evaluation dataset: 0.9764 (9764/10000)
+
+Repaired DNN accuracy on the evaluation dataset: 0.9452 (9452/10000)
+
+Generalization check for data id 726...
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0043): 
+0.9200 (46/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0051): 
+0.7600 (38/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0059): 
+0.7600 (38/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0067): 
+0.6800 (34/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0078): 
+0.5600 (28/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0098): 
+0.4600 (23/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0118): 
+0.3400 (17/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0157): 
+0.2000 (10/50) -> 1.0000 (50/50)
+
+---------------------------------
+=== Summary of Repair Results ===
+---------------------------------
+
+Run 4: Original accuracy = 0.9764, Repaired accuracy = 0.9452

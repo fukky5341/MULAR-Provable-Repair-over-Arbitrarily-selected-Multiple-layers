@@ -6,8 +6,8 @@ MULti-layer and ARbitrary-layer repair
 - [Installation Guide](#installation-guide)
 - [Example](#example)
 - [Small Experiment](#small-experiment)
-- [Reproducing Materials](#reproducing-materials)
 - [Executing Experiments](#executing-experiments)
+- [Reproducing Materials](#reproducing-materials)
 - [Project Structure](#project-structure)
 
 
@@ -131,17 +131,13 @@ uv run python example/track_repair.py \
 
 ## Small Experiment
 
-After installing the dependencies, run the lightweight end-to-end smoke test
-from the repository root:
+After installing the dependencies, run the lightweight end-to-end smoke test from the repository root:
 
 ```bash
 uv run python smoke_test.py
 ```
 
-The test runs two region-wise repair instances on MNIST-F1 for all approaches
-(APRNN, ProRepair, PREPARED, LLR, and MULAR), using one repair region with five
-perturbed input dimensions. It stops immediately if an approach exits with an
-error and saves the normal approach-specific logs under `result/`.
+The test runs two region-wise repair instances on MNIST-F1 for all approaches (APRNN, ProRepair, PREPARED, LLR, and MULAR), using one repair region with five perturbed input dimensions. It stops immediately if an approach exits with an error and saves the normal approach-specific logs under `result/`.
 
 The experiment size and approaches can also be changed, for example:
 
@@ -152,7 +148,25 @@ uv run python smoke_test.py \
   --approaches LLR MULAR
 ```
 
+### Result Summary
 
+After all selected approaches finish, the smoke test parses their logs and
+prints three compact tables: repair success counts, mean repair time over
+successful runs, and mean accuracy drop over successful runs. The same tables
+are saved under `result/smoke_test_summary/` as:
+
+- `success_counts.csv`
+- `repair_time.csv`
+- `accuracy_drop.csv`
+- `README.md` (all three tables in Markdown)
+
+To regenerate only the tables from existing smoke-test logs, run:
+
+```bash
+uv run python result_analysis/smoke_summary.py \
+  --num-runs 2 \
+  --ndims 5
+```
 
 ## Executing Experiments
 ### APRNN
@@ -224,15 +238,67 @@ uv run test.py --exe-id 0 --repair-layer-indices 5 7
 
 
 
+## Reproducing Materials
+We provide the materials for reproducing the experimental results in the paper. The materials are available in the `result_analysis/materials` folder. You can find the following files:
+
+Run `uv run python result_analysis/generate_materials.py --original` to reproduce the same artifact set separately in `result_analysis/original_materials`.
+
+- RQ1
+  - 'success_count_nonzero_mnistf1.csv'
+  - 'success_count_nonzero_mnistf2.csv'
+  - 'success_count_all_mnistf1.csv'
+  - 'success_count_all_mnistf2.csv'
+  - 'success_count_all_cifar.csv'
+  - 'success_count_all_gtsrb.csv'
+  - 'prepared_outcomes_cifar.csv'
+  - 'prepared_outcomes_gtsrb.csv'
+  - 'pairwise_success_count_mnistf1.csv'
+- RQ2
+  - 'repair_acc_drop_nonzero_mnistf1.png'
+  - 'repair_acc_drop_nonzero_mnistf2.png'
+  - 'repair_acc_drop_all_mnistf1.png'
+  - 'repair_acc_drop_all_mnistf2.png'
+  - 'repair_acc_drop_all_cifar.png'
+  - 'repair_acc_drop_all_gtsrb.png'
+  - 'pairwise_repair_acc_drop_all_mular_vs_prepared_mnistf1.png'
+  - 'pairwise_repair_acc_drop_all_mular_vs_prepared_mnistf2.png'
+- RQ3
+  - 'repair_time_nonzero_mnistf1.png'
+  - 'repair_time_nonzero_mnistf2.png'
+  - 'repair_time_all_mnistf1.png'
+  - 'repair_time_all_mnistf2.png'
+  - 'repair_time_all_cifar.png'
+  - 'repair_time_all_gtsrb.png'
+- RQ4
+  - 'pairwise_success_count_diff_layers_mnistf1.csv'
+  - 'pairwise_success_count_diff_layers_mnistf2.csv'
+  - 'pairwise_success_count_diff_layers_cifar.csv'
+  - 'pairwise_success_count_diff_layers_gtsrb.csv'
+  - 'pairwise_repair_acc_drop_diff_layers_mnistf1.csv'
+  - 'pairwise_repair_acc_drop_diff_layers_mnistf2.csv'
+  - 'pairwise_repair_acc_drop_diff_layers_cifar.csv'
+  - 'pairwise_repair_acc_drop_diff_layers_gtsrb.csv'
+- RQ5
+  - 'success_count_fault_localization_mnistf1.csv'
+  - 'success_count_fault_localization_cifar.csv'
+  - 'repair_acc_drop_fault_localization_mnistf1.png'
+  - 'repair_acc_drop_fault_localization_cifar.png'
+  - 'repair_time_fault_localization_mnistf1.png'
+  - 'repair_time_fault_localization_cifar.png'
+
+
 
 ## Project Structure
 ```
 sabre/
  ├─ test.py    # Entry point for MULAR experiments
  ├─ test_lastlayer.py    # Entry point for LLR experiments
+ ├─ test_fl.py    # Entry point for MULAR + Fault Localization experiments
  ├─ test_prepared.py    # Entry point for PREPARED experiments
  ├─ test_prorepair.py    # Entry point for ProRepair experiments
  ├─ test_aprnn.py    # Entry point for APRNN experiments
+ ├─ result_analysis/    # Materials for experimental evaluation and scripts for generating them
+ ├─ original_result/    # Original experimental results for reproducing the paper's figures and tables
  ├─ repair/    # Repair modules of MULAR
  ├─ LastLayerRepair/    # Repair modules of LLR
  ├─ PREPARED/    # Repair modules of PREPARED

@@ -1,0 +1,423 @@
+=== Repair Test Log ===
+Repair task: Local Robustness
+Repair mode: lp_ibp
+Run: 15/20
+Network: mnist_256x4
+
+Target label: None
+Number of v-polytopes: 3
+Perturbation distance (eps): 0.00392156862745098
+Perturbation pick: all
+
+Repair layer selection: explicit
+Modifiable layers: [7, 9]
+
+Modifiable range: 0.5
+Objective parameter regularization: l2
+Objective type: ObjectiveType.POLYTOPE_DISTANCE
+Strength of distance term in objective: 1000
+Strength increase rate for distance term: 1
+Strength of regularization term: 1.0
+Use priority weight: False
+Objective weight for positive region (if not using priority weight): 1000
+
+FL performed: False
+
+Additional time for input space construction: 672.81 seconds
+Average time per repair region: 13.46 seconds
+
+
+------------------------
+=== Repair run 15/20 ===
+------------------------
+
+Data ids for this repair run: [3533, 3951, 2070]
+
+
+------------------------------------
+Repairing layer 7 with strength 1000
+------------------------------------
+
+Collecting safe subspaces for the repaired layer 7...
+-----------------------------------------------------
+
+Building subspace for data_id 3533...
+
+Building subspace for data_id 3951...
+
+Building subspace for data_id 2070...
+
+Solving the LP model to get repaired parameters for layer 7...
+--------------------------------------------------------------
+
+LP model built (20.33 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 0.13 seconds
+
+LP solver found repaired parameters for layer 7. Updating the layer with repaired parameters.
+
+Evaluating the repaired DNN after repairing layer 7...
+------------------------------------------------------
+
+Checking subspace violation
+
+  base region ...
+  The number of violating dimensions: 174 (lb), 167 (ub)
+
+  repaired region 1/1 ...
+  The number of violating dimensions: 213 (lb), 185 (ub)
+
+Checking violation on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+  repaired region 1/1 ...
+  Potential violation detected in spec dimensions: [6, 8] by backsubstitution/dual optimization. Checking with LP solver...
+
+Status check after repair for data id 3533:
+  Base region is still satisfying.
+  Repaired region is no longer violating.
+
+Checking subspace violation
+
+  base region ...
+  The number of violating dimensions: 162 (lb), 146 (ub)
+
+  repaired region 1/1 ...
+  The number of violating dimensions: 200 (lb), 177 (ub)
+
+Checking violation on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+  repaired region 1/1 ...
+  Potential violation detected in spec dimensions: [0, 8] by backsubstitution/dual optimization. Checking with LP solver...
+
+Status check after repair for data id 3951:
+  Base region is still satisfying.
+  Repaired region is still violating.
+
+Checking subspace violation
+
+  base region ...
+  The number of violating dimensions: 179 (lb), 139 (ub)
+
+  repaired region 1/1 ...
+  The number of violating dimensions: 254 (lb), 256 (ub)
+
+Checking violation on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+  repaired region 1/1 ...
+  Potential violation detected in spec dimensions: [0, 1, 2, 3, 4, 5, 6, 7, 8] by backsubstitution/dual optimization. Checking with LP solver...
+
+Status check after repair for data id 2070:
+  Base region is still satisfying.
+  Repaired region is still violating.
+
+Repaired DNN violates the specification for some repaired regions.
+
+Step 1: Layer 7 failed. Trying the next layer...
+
+Last layer repair: skipping safe subspace construction.
+-------------------------------------------------------
+
+Solving the LP model to get repaired parameters for layer 9...
+--------------------------------------------------------------
+
+LP model built (7.93 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 0.01 seconds
+
+LP solver found repaired parameters for layer 9. Updating the layer with repaired parameters.
+
+Step 2: Evaluating the repaired DNN after repairing the last layer...
+---------------------------------------------------------------------
+
+Checking violation on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+  repaired region 1/1 ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 3533:
+  Base region is still satisfying.
+  Repaired region is no longer violating.
+
+Checking violation on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+  repaired region 1/1 ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 3951:
+  Base region is still satisfying.
+  Repaired region is no longer violating.
+
+Checking violation on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+  repaired region 1/1 ...
+  Potential violation detected in spec dimensions: [0, 1, 2, 3, 4, 5, 6, 7, 8] by backsubstitution/dual optimization. Checking with LP solver...
+
+Status check after repair for data id 2070:
+  Base region is still satisfying.
+  Repaired region is still violating.
+
+Repaired DNN violates the specification for some repaired regions.
+
+Step 2: Repair unsuccessful for the last layer. Restarting the next iteration with increased strength...
+
+
+------------------------------------
+Repairing layer 7 with strength 1000
+------------------------------------
+
+Collecting safe subspaces for the repaired layer 7...
+-----------------------------------------------------
+
+Building subspace for data_id 3533...
+
+Building subspace for data_id 3951...
+
+Building subspace for data_id 2070...
+
+Solving the LP model to get repaired parameters for layer 7...
+--------------------------------------------------------------
+
+LP model built (20.27 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 0.13 seconds
+
+LP solver found repaired parameters for layer 7. Updating the layer with repaired parameters.
+
+Evaluating the repaired DNN after repairing layer 7...
+------------------------------------------------------
+
+Checking subspace violation
+
+  base region ...
+  The number of violating dimensions: 41 (lb), 53 (ub)
+
+  repaired region 1/1 ...
+  The number of violating dimensions: 111 (lb), 69 (ub)
+
+Checking violation on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+  repaired region 1/1 ...
+  Potential violation detected in spec dimensions: [2, 3, 6, 7, 8] by backsubstitution/dual optimization. Checking with LP solver...
+
+Status check after repair for data id 3533:
+  Base region is still satisfying.
+  Repaired region is still violating.
+
+Checking subspace violation
+
+  base region ...
+  The number of violating dimensions: 62 (lb), 61 (ub)
+
+  repaired region 1/1 ...
+  The number of violating dimensions: 165 (lb), 176 (ub)
+
+Checking violation on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+  repaired region 1/1 ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 3951:
+  Base region is still satisfying.
+  Repaired region is no longer violating.
+
+Checking subspace violation
+
+  base region ...
+  The number of violating dimensions: 23 (lb), 29 (ub)
+
+  repaired region 1/1 ...
+  The number of violating dimensions: 172 (lb), 175 (ub)
+
+Checking violation on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+  repaired region 1/1 ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2070:
+  Base region is still satisfying.
+  Repaired region is no longer violating.
+
+Repaired DNN violates the specification for some repaired regions.
+
+Step 3: Layer 7 failed. Trying the next layer...
+
+Last layer repair: skipping safe subspace construction.
+-------------------------------------------------------
+
+Solving the LP model to get repaired parameters for layer 9...
+--------------------------------------------------------------
+
+LP model built (7.92 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 0.01 seconds
+
+LP solver found repaired parameters for layer 9. Updating the layer with repaired parameters.
+
+Step 4: Evaluating the repaired DNN after repairing the last layer...
+---------------------------------------------------------------------
+
+Checking violation on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+  repaired region 1/1 ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 3533:
+  Base region is still satisfying.
+  Repaired region is no longer violating.
+
+Checking violation on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+  repaired region 1/1 ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 3951:
+  Base region is still satisfying.
+  Repaired region is no longer violating.
+
+Checking violation on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+  repaired region 1/1 ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2070:
+  Base region is still satisfying.
+  Repaired region is no longer violating.
+
+Repaired DNN satisfies the specification for all repaired regions.
+
+Step 4: Successfully repaired the DNN!
+
+Total repair time: 118.76 seconds
+
+Total steps: 4
+
+Evaluating the repaired DNN after repair...
+-------------------------------------------
+
+Original DNN accuracy on the evaluation dataset: 0.9764 (9764/10000)
+
+Repaired DNN accuracy on the evaluation dataset: 0.5942 (5942/10000)
+
+Generalization check for data id 3533...
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0043): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0051): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0059): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0067): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0078): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0098): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0118): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0157): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Generalization check for data id 3951...
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0043): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0051): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0059): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0067): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0078): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0098): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0118): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0157): 
+1.0000 (50/50) -> 1.0000 (50/50)
+
+Generalization check for data id 2070...
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0043): 
+0.8600 (43/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0051): 
+0.8600 (43/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0059): 
+0.8600 (43/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0067): 
+0.8000 (40/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0078): 
+0.7600 (38/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0098): 
+0.7200 (36/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0118): 
+0.6400 (32/50) -> 1.0000 (50/50)
+
+Repaired DNN accuracy on the generalization dataset (dist=0.0157): 
+0.6200 (31/50) -> 1.0000 (50/50)
+
+---------------------------------
+=== Summary of Repair Results ===
+---------------------------------
+
+Run 15: Original accuracy = 0.9764, Repaired accuracy = 0.5942

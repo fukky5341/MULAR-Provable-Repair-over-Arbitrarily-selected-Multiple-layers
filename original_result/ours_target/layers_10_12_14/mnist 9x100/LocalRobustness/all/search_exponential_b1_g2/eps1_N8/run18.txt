@@ -1,0 +1,2354 @@
+=== Repair Test Log ===
+Start time: 2026-10-31 05:45:55 UTC
+Run: 18/20
+Repair task: Local Robustness
+Repair mode: lp_ibp
+Network: mnist 9x100
+
+Target label: None
+Number of v-polytopes: 8
+Perturbation distance (eps): 0.00392156862745098
+Perturbation pick: all
+
+Repair layer selection: explicit
+Modifiable layers: [10, 12, 14]
+
+Subspace shrink search method: binary
+Subspace expansion search method: exponential
+Subspace search batch size: 1
+Subspace search growth factor: 2.0
+
+Modifiable range: 0.5
+Objective parameter regularization: l2
+Objective type: ObjectiveType.POLYTOPE_DISTANCE
+Strength of distance term in objective: 1000
+Strength increase rate for distance term: 1
+Strength of regularization term: 1.0
+Use priority weight: False
+Objective weight for positive region (if not using priority weight): 1000
+Maximum subrepair loops: 4
+
+FL performed: False
+
+
+------------------------
+=== Repair run 18/20 ===
+------------------------
+
+Data ids for this repair run: [4500, 5653, 6000, 2905, 1772, 2271, 313, 7812]
+
+Input construction time for this run's 8 selected target instances: 126.42 seconds
+
+Average time per selected repair region for this run: 15.80 seconds
+
+
+==================================================
+Subrepair loop 1/4: modifiable layers [10, 12, 14]
+==================================================
+
+
+-------------------------------------
+Repairing layer 10 with strength 1000
+-------------------------------------
+
+Collecting safe subspaces for the repaired layer 10...
+------------------------------------------------------
+
+Building subspace for data_id 4500...
+
+Subspace construction time: layer=10, data_id=4500, region=base, time=4.25 seconds
+
+Building subspace for data_id 5653...
+
+Subspace construction time: layer=10, data_id=5653, region=base, time=4.22 seconds
+
+Building subspace for data_id 6000...
+
+Subspace construction time: layer=10, data_id=6000, region=base, time=4.13 seconds
+
+Building subspace for data_id 2905...
+
+Subspace construction time: layer=10, data_id=2905, region=base, time=4.33 seconds
+
+Building subspace for data_id 1772...
+
+Subspace construction time: layer=10, data_id=1772, region=base, time=4.22 seconds
+
+Building subspace for data_id 2271...
+
+Subspace construction time: layer=10, data_id=2271, region=base, time=4.31 seconds
+
+Building subspace for data_id 313...
+
+Subspace construction time: layer=10, data_id=313, region=base, time=4.18 seconds
+
+Building subspace for data_id 7812...
+
+Subspace construction time: layer=10, data_id=7812, region=base, time=4.21 seconds
+
+Solving the LP model to get repaired parameters for layer 10...
+---------------------------------------------------------------
+
+Reusing subspace bounds for data_id 4500, layer 10 (parameters unchanged).
+
+Reusing subspace bounds for data_id 5653, layer 10 (parameters unchanged).
+
+Reusing subspace bounds for data_id 6000, layer 10 (parameters unchanged).
+
+Reusing subspace bounds for data_id 2905, layer 10 (parameters unchanged).
+
+Reusing subspace bounds for data_id 1772, layer 10 (parameters unchanged).
+
+Reusing subspace bounds for data_id 2271, layer 10 (parameters unchanged).
+
+Reusing subspace bounds for data_id 313, layer 10 (parameters unchanged).
+
+Reusing subspace bounds for data_id 7812, layer 10 (parameters unchanged).
+
+LP model built (6.94 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 0.11 seconds
+
+LP solver found repaired parameters for layer 10. Updating the layer with repaired parameters.
+
+Evaluating the repaired DNN after repairing layer 10...
+-------------------------------------------------------
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 4500:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7, 1] (predicted class 9, competitor classes [7, 1]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 5653:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 87 (lb), 91 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 6000:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 9, competitor classes [7]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2905:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 85 (lb), 86 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 1772:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 96 (lb), 96 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [8] (predicted class 7, competitor classes [9]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2271:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 93 (lb), 93 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 313:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 89 (lb), 88 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [4] (predicted class 3, competitor classes [5]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 7812:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 1, competitor classes [8]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Repaired DNN still has violations: 0 base region(s), 3 repaired region(s).
+
+Step 1: Layer 10 failed. Trying the next configured layer...
+
+
+-------------------------------------
+Repairing layer 12 with strength 1000
+-------------------------------------
+
+Collecting safe subspaces for the repaired layer 12...
+------------------------------------------------------
+
+Building subspace for data_id 4500...
+
+Subspace construction time: layer=12, data_id=4500, region=base, time=1.53 seconds
+
+Building subspace for data_id 5653...
+
+Subspace construction time: layer=12, data_id=5653, region=base, time=1.47 seconds
+
+Subspace construction time: layer=12, data_id=5653, region=repaired[0], time=1.51 seconds
+
+Building subspace for data_id 6000...
+
+Subspace construction time: layer=12, data_id=6000, region=base, time=1.45 seconds
+
+Building subspace for data_id 2905...
+
+Subspace construction time: layer=12, data_id=2905, region=base, time=1.56 seconds
+
+Subspace construction time: layer=12, data_id=2905, region=repaired[0], time=2.40 seconds
+
+Building subspace for data_id 1772...
+
+Subspace construction time: layer=12, data_id=1772, region=base, time=1.51 seconds
+
+Subspace construction time: layer=12, data_id=1772, region=repaired[0], time=2.35 seconds
+
+Building subspace for data_id 2271...
+
+Subspace construction time: layer=12, data_id=2271, region=base, time=1.54 seconds
+
+Subspace construction time: layer=12, data_id=2271, region=repaired[0], time=2.39 seconds
+
+Building subspace for data_id 313...
+
+Subspace construction time: layer=12, data_id=313, region=base, time=1.45 seconds
+
+Subspace construction time: layer=12, data_id=313, region=repaired[0], time=2.30 seconds
+
+Building subspace for data_id 7812...
+
+Subspace construction time: layer=12, data_id=7812, region=base, time=1.47 seconds
+
+Solving the LP model to get repaired parameters for layer 12...
+---------------------------------------------------------------
+
+LP model built (12.62 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 0.10 seconds
+
+LP solver found repaired parameters for layer 12. Updating the layer with repaired parameters.
+
+Evaluating the repaired DNN after repairing layer 12...
+-------------------------------------------------------
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 4500:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7, 1] (predicted class 9, competitor classes [7, 1]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 5653:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 34 (lb), 38 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 6000:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 98 (lb), 99 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 9, competitor classes [7]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2905:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 84 (lb), 89 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 1772:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 97 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [8] (predicted class 7, competitor classes [9]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2271:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 80 (lb), 89 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 313:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 92 (lb), 92 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [4] (predicted class 3, competitor classes [5]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 7812:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 1, competitor classes [8]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Repaired DNN still has violations: 0 base region(s), 2 repaired region(s).
+
+Step 2: Layer 12 failed. Trying the next configured layer...
+
+
+-------------------------------------
+Repairing layer 14 with strength 1000
+-------------------------------------
+
+Collecting safe subspaces for the repaired layer 14...
+------------------------------------------------------
+
+Building subspace for data_id 4500...
+
+Subspace construction time: layer=14, data_id=4500, region=base, time=1.05 seconds
+
+Building subspace for data_id 5653...
+
+Subspace construction time: layer=14, data_id=5653, region=base, time=1.05 seconds
+
+Subspace construction time: layer=14, data_id=5653, region=repaired[0], time=1.02 seconds
+
+Building subspace for data_id 6000...
+
+Subspace construction time: layer=14, data_id=6000, region=base, time=1.01 seconds
+
+Subspace construction time: layer=14, data_id=6000, region=repaired[0], time=1.29 seconds
+
+Building subspace for data_id 2905...
+
+Subspace construction time: layer=14, data_id=2905, region=base, time=1.03 seconds
+
+Subspace construction time: layer=14, data_id=2905, region=repaired[0], time=1.06 seconds
+
+Building subspace for data_id 1772...
+
+Subspace construction time: layer=14, data_id=1772, region=base, time=1.03 seconds
+
+Subspace construction time: layer=14, data_id=1772, region=repaired[0], time=1.29 seconds
+
+Building subspace for data_id 2271...
+
+Subspace construction time: layer=14, data_id=2271, region=base, time=1.02 seconds
+
+Subspace construction time: layer=14, data_id=2271, region=repaired[0], time=1.05 seconds
+
+Building subspace for data_id 313...
+
+Subspace construction time: layer=14, data_id=313, region=base, time=1.01 seconds
+
+Subspace construction time: layer=14, data_id=313, region=repaired[0], time=1.03 seconds
+
+Building subspace for data_id 7812...
+
+Subspace construction time: layer=14, data_id=7812, region=base, time=1.06 seconds
+
+Solving the LP model to get repaired parameters for layer 14...
+---------------------------------------------------------------
+
+LP model built (15.41 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 0.11 seconds
+
+LP solver found repaired parameters for layer 14. Updating the layer with repaired parameters.
+
+Evaluating the repaired DNN after repairing layer 14...
+-------------------------------------------------------
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 4500:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7, 1] (predicted class 9, competitor classes [7, 1]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 5653:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 5 (lb), 11 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 6000:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 97 (lb), 97 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 9, competitor classes [7]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2905:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 41 (lb), 32 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 1772:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 96 (lb), 95 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [8] (predicted class 7, competitor classes [9]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2271:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 41 (lb), 41 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 313:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 34 (lb), 37 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 7812:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 1, competitor classes [8]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Repaired DNN still has violations: 0 base region(s), 2 repaired region(s).
+
+Step 3: Layer 14 failed. Trying the next configured layer...
+
+
+==================================================
+Subrepair loop 2/4: modifiable layers [10, 12, 14]
+==================================================
+
+
+-------------------------------------
+Repairing layer 10 with strength 1000
+-------------------------------------
+
+Collecting safe subspaces for the repaired layer 10...
+------------------------------------------------------
+
+Building subspace for data_id 4500...
+
+Subspace construction time: layer=10, data_id=4500, region=base, time=2.45 seconds
+
+Building subspace for data_id 5653...
+
+Subspace construction time: layer=10, data_id=5653, region=base, time=2.40 seconds
+
+Subspace construction time: layer=10, data_id=5653, region=repaired[0], time=2.45 seconds
+
+Building subspace for data_id 6000...
+
+Subspace construction time: layer=10, data_id=6000, region=base, time=2.33 seconds
+
+Subspace construction time: layer=10, data_id=6000, region=repaired[0], time=4.11 seconds
+
+Building subspace for data_id 2905...
+
+Subspace construction time: layer=10, data_id=2905, region=base, time=2.43 seconds
+
+Subspace construction time: layer=10, data_id=2905, region=repaired[0], time=2.52 seconds
+
+Building subspace for data_id 1772...
+
+Subspace construction time: layer=10, data_id=1772, region=base, time=2.44 seconds
+
+Subspace construction time: layer=10, data_id=1772, region=repaired[0], time=4.20 seconds
+
+Building subspace for data_id 2271...
+
+Subspace construction time: layer=10, data_id=2271, region=base, time=2.42 seconds
+
+Subspace construction time: layer=10, data_id=2271, region=repaired[0], time=2.51 seconds
+
+Building subspace for data_id 313...
+
+Subspace construction time: layer=10, data_id=313, region=base, time=2.41 seconds
+
+Subspace construction time: layer=10, data_id=313, region=repaired[0], time=2.43 seconds
+
+Building subspace for data_id 7812...
+
+Subspace construction time: layer=10, data_id=7812, region=base, time=2.62 seconds
+
+Solving the LP model to get repaired parameters for layer 10...
+---------------------------------------------------------------
+
+LP model built (10.40 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 0.11 seconds
+
+LP solver found repaired parameters for layer 10. Updating the layer with repaired parameters.
+
+Evaluating the repaired DNN after repairing layer 10...
+-------------------------------------------------------
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 4500:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7, 1] (predicted class 9, competitor classes [7, 1]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 5653:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 22 (lb), 28 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 6000:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 98 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 9, competitor classes [7]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2905:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 40 (lb), 54 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 1772:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 100 (lb), 96 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [8] (predicted class 7, competitor classes [9]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2271:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 40 (lb), 42 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 313:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 45 (lb), 50 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 7812:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 1, competitor classes [8]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Repaired DNN still has violations: 0 base region(s), 2 repaired region(s).
+
+Step 4: Layer 10 failed. Trying the next configured layer...
+
+
+-------------------------------------
+Repairing layer 12 with strength 1000
+-------------------------------------
+
+Collecting safe subspaces for the repaired layer 12...
+------------------------------------------------------
+
+Building subspace for data_id 4500...
+
+Subspace construction time: layer=12, data_id=4500, region=base, time=1.52 seconds
+
+Building subspace for data_id 5653...
+
+Subspace construction time: layer=12, data_id=5653, region=base, time=1.56 seconds
+
+Subspace construction time: layer=12, data_id=5653, region=repaired[0], time=1.47 seconds
+
+Building subspace for data_id 6000...
+
+Subspace construction time: layer=12, data_id=6000, region=base, time=1.45 seconds
+
+Subspace construction time: layer=12, data_id=6000, region=repaired[0], time=2.27 seconds
+
+Building subspace for data_id 2905...
+
+Subspace construction time: layer=12, data_id=2905, region=base, time=1.52 seconds
+
+Subspace construction time: layer=12, data_id=2905, region=repaired[0], time=1.58 seconds
+
+Building subspace for data_id 1772...
+
+Subspace construction time: layer=12, data_id=1772, region=base, time=1.51 seconds
+
+Subspace construction time: layer=12, data_id=1772, region=repaired[0], time=2.33 seconds
+
+Building subspace for data_id 2271...
+
+Subspace construction time: layer=12, data_id=2271, region=base, time=1.50 seconds
+
+Subspace construction time: layer=12, data_id=2271, region=repaired[0], time=1.56 seconds
+
+Building subspace for data_id 313...
+
+Subspace construction time: layer=12, data_id=313, region=base, time=1.44 seconds
+
+Subspace construction time: layer=12, data_id=313, region=repaired[0], time=1.50 seconds
+
+Building subspace for data_id 7812...
+
+Subspace construction time: layer=12, data_id=7812, region=base, time=1.58 seconds
+
+Solving the LP model to get repaired parameters for layer 12...
+---------------------------------------------------------------
+
+LP model built (12.60 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 0.10 seconds
+
+LP solver found repaired parameters for layer 12. Updating the layer with repaired parameters.
+
+Evaluating the repaired DNN after repairing layer 12...
+-------------------------------------------------------
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 4500:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7, 1] (predicted class 9, competitor classes [7, 1]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 5653:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 3 (lb), 3 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 6000:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 100 (lb), 99 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 9, competitor classes [7]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2905:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 43 (lb), 38 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 1772:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 97 (lb), 97 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [8] (predicted class 7, competitor classes [9]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2271:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 40 (lb), 36 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 313:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 44 (lb), 48 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 7812:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 1, competitor classes [8]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Repaired DNN still has violations: 0 base region(s), 2 repaired region(s).
+
+Step 5: Layer 12 failed. Trying the next configured layer...
+
+
+-------------------------------------
+Repairing layer 14 with strength 1000
+-------------------------------------
+
+Collecting safe subspaces for the repaired layer 14...
+------------------------------------------------------
+
+Building subspace for data_id 4500...
+
+Subspace construction time: layer=14, data_id=4500, region=base, time=1.04 seconds
+
+Building subspace for data_id 5653...
+
+Subspace construction time: layer=14, data_id=5653, region=base, time=1.04 seconds
+
+Subspace construction time: layer=14, data_id=5653, region=repaired[0], time=1.01 seconds
+
+Building subspace for data_id 6000...
+
+Subspace construction time: layer=14, data_id=6000, region=base, time=1.00 seconds
+
+Subspace construction time: layer=14, data_id=6000, region=repaired[0], time=1.28 seconds
+
+Building subspace for data_id 2905...
+
+Subspace construction time: layer=14, data_id=2905, region=base, time=1.03 seconds
+
+Subspace construction time: layer=14, data_id=2905, region=repaired[0], time=1.03 seconds
+
+Building subspace for data_id 1772...
+
+Subspace construction time: layer=14, data_id=1772, region=base, time=1.02 seconds
+
+Subspace construction time: layer=14, data_id=1772, region=repaired[0], time=1.29 seconds
+
+Building subspace for data_id 2271...
+
+Subspace construction time: layer=14, data_id=2271, region=base, time=1.02 seconds
+
+Subspace construction time: layer=14, data_id=2271, region=repaired[0], time=1.04 seconds
+
+Building subspace for data_id 313...
+
+Subspace construction time: layer=14, data_id=313, region=base, time=1.00 seconds
+
+Subspace construction time: layer=14, data_id=313, region=repaired[0], time=1.02 seconds
+
+Building subspace for data_id 7812...
+
+Subspace construction time: layer=14, data_id=7812, region=base, time=1.05 seconds
+
+Solving the LP model to get repaired parameters for layer 14...
+---------------------------------------------------------------
+
+LP model built (15.26 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 0.11 seconds
+
+LP solver found repaired parameters for layer 14. Updating the layer with repaired parameters.
+
+Evaluating the repaired DNN after repairing layer 14...
+-------------------------------------------------------
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 4500:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7, 1] (predicted class 9, competitor classes [7, 1]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 5653:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 3 (lb), 10 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 6000:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 99 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 9, competitor classes [7]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2905:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 32 (lb), 26 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 1772:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 97 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [8] (predicted class 7, competitor classes [9]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2271:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 34 (lb), 35 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 313:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 32 (lb), 49 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 7812:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 97 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 1, competitor classes [8]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Repaired DNN still has violations: 0 base region(s), 2 repaired region(s).
+
+Step 6: Layer 14 failed. Trying the next configured layer...
+
+
+==================================================
+Subrepair loop 3/4: modifiable layers [10, 12, 14]
+==================================================
+
+
+-------------------------------------
+Repairing layer 10 with strength 1000
+-------------------------------------
+
+Collecting safe subspaces for the repaired layer 10...
+------------------------------------------------------
+
+Building subspace for data_id 4500...
+
+Subspace construction time: layer=10, data_id=4500, region=base, time=2.45 seconds
+
+Building subspace for data_id 5653...
+
+Subspace construction time: layer=10, data_id=5653, region=base, time=2.40 seconds
+
+Subspace construction time: layer=10, data_id=5653, region=repaired[0], time=2.39 seconds
+
+Building subspace for data_id 6000...
+
+Subspace construction time: layer=10, data_id=6000, region=base, time=2.33 seconds
+
+Subspace construction time: layer=10, data_id=6000, region=repaired[0], time=4.10 seconds
+
+Building subspace for data_id 2905...
+
+Subspace construction time: layer=10, data_id=2905, region=base, time=2.43 seconds
+
+Subspace construction time: layer=10, data_id=2905, region=repaired[0], time=2.44 seconds
+
+Building subspace for data_id 1772...
+
+Subspace construction time: layer=10, data_id=1772, region=base, time=2.42 seconds
+
+Subspace construction time: layer=10, data_id=1772, region=repaired[0], time=4.17 seconds
+
+Building subspace for data_id 2271...
+
+Subspace construction time: layer=10, data_id=2271, region=base, time=2.42 seconds
+
+Subspace construction time: layer=10, data_id=2271, region=repaired[0], time=2.42 seconds
+
+Building subspace for data_id 313...
+
+Subspace construction time: layer=10, data_id=313, region=base, time=2.35 seconds
+
+Subspace construction time: layer=10, data_id=313, region=repaired[0], time=2.41 seconds
+
+Building subspace for data_id 7812...
+
+Subspace construction time: layer=10, data_id=7812, region=base, time=2.62 seconds
+
+Solving the LP model to get repaired parameters for layer 10...
+---------------------------------------------------------------
+
+LP model built (10.31 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 0.11 seconds
+
+LP solver found repaired parameters for layer 10. Updating the layer with repaired parameters.
+
+Evaluating the repaired DNN after repairing layer 10...
+-------------------------------------------------------
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 4500:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7, 1] (predicted class 9, competitor classes [7, 1]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 5653:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 32 (lb), 39 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 6000:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 9, competitor classes [7]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2905:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 34 (lb), 40 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 1772:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 99 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [8] (predicted class 7, competitor classes [9]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2271:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 43 (lb), 42 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 313:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 50 (lb), 53 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 7812:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 98 (lb), 97 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 1, competitor classes [8]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Repaired DNN still has violations: 0 base region(s), 2 repaired region(s).
+
+Step 7: Layer 10 failed. Trying the next configured layer...
+
+
+-------------------------------------
+Repairing layer 12 with strength 1000
+-------------------------------------
+
+Collecting safe subspaces for the repaired layer 12...
+------------------------------------------------------
+
+Building subspace for data_id 4500...
+
+Subspace construction time: layer=12, data_id=4500, region=base, time=1.53 seconds
+
+Building subspace for data_id 5653...
+
+Subspace construction time: layer=12, data_id=5653, region=base, time=1.56 seconds
+
+Subspace construction time: layer=12, data_id=5653, region=repaired[0], time=1.46 seconds
+
+Building subspace for data_id 6000...
+
+Subspace construction time: layer=12, data_id=6000, region=base, time=1.44 seconds
+
+Subspace construction time: layer=12, data_id=6000, region=repaired[0], time=2.28 seconds
+
+Building subspace for data_id 2905...
+
+Subspace construction time: layer=12, data_id=2905, region=base, time=1.53 seconds
+
+Subspace construction time: layer=12, data_id=2905, region=repaired[0], time=1.53 seconds
+
+Building subspace for data_id 1772...
+
+Subspace construction time: layer=12, data_id=1772, region=base, time=1.50 seconds
+
+Subspace construction time: layer=12, data_id=1772, region=repaired[0], time=2.31 seconds
+
+Building subspace for data_id 2271...
+
+Subspace construction time: layer=12, data_id=2271, region=base, time=1.49 seconds
+
+Subspace construction time: layer=12, data_id=2271, region=repaired[0], time=1.49 seconds
+
+Building subspace for data_id 313...
+
+Subspace construction time: layer=12, data_id=313, region=base, time=1.43 seconds
+
+Subspace construction time: layer=12, data_id=313, region=repaired[0], time=1.49 seconds
+
+Building subspace for data_id 7812...
+
+Subspace construction time: layer=12, data_id=7812, region=base, time=1.58 seconds
+
+Solving the LP model to get repaired parameters for layer 12...
+---------------------------------------------------------------
+
+LP model built (12.55 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 0.10 seconds
+
+LP solver found repaired parameters for layer 12. Updating the layer with repaired parameters.
+
+Evaluating the repaired DNN after repairing layer 12...
+-------------------------------------------------------
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 4500:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7, 1] (predicted class 9, competitor classes [7, 1]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 5653:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 5 (lb), 8 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 6000:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 99 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 9, competitor classes [7]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2905:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 38 (lb), 28 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [8] (predicted class 7, competitor classes [9]) with LP solver in ascending margin order...
+
+Status check after repair for data id 1772:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [8] (predicted class 7, competitor classes [9]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2271:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 37 (lb), 31 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 313:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 46 (lb), 43 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 7812:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 95 (lb), 99 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 1, competitor classes [8]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Repaired DNN still has violations: 0 base region(s), 1 repaired region(s).
+
+Step 8: Layer 12 failed. Trying the next configured layer...
+
+
+-------------------------------------
+Repairing layer 14 with strength 1000
+-------------------------------------
+
+Collecting safe subspaces for the repaired layer 14...
+------------------------------------------------------
+
+Building subspace for data_id 4500...
+
+Subspace construction time: layer=14, data_id=4500, region=base, time=1.04 seconds
+
+Building subspace for data_id 5653...
+
+Subspace construction time: layer=14, data_id=5653, region=base, time=1.04 seconds
+
+Subspace construction time: layer=14, data_id=5653, region=repaired[0], time=1.01 seconds
+
+Building subspace for data_id 6000...
+
+Subspace construction time: layer=14, data_id=6000, region=base, time=0.99 seconds
+
+Subspace construction time: layer=14, data_id=6000, region=repaired[0], time=1.28 seconds
+
+Building subspace for data_id 2905...
+
+Subspace construction time: layer=14, data_id=2905, region=base, time=1.03 seconds
+
+Subspace construction time: layer=14, data_id=2905, region=repaired[0], time=1.04 seconds
+
+Building subspace for data_id 1772...
+
+Subspace construction time: layer=14, data_id=1772, region=base, time=1.12 seconds
+
+Subspace construction time: layer=14, data_id=1772, region=repaired[0], time=1.28 seconds
+
+Building subspace for data_id 2271...
+
+Subspace construction time: layer=14, data_id=2271, region=base, time=1.01 seconds
+
+Subspace construction time: layer=14, data_id=2271, region=repaired[0], time=1.02 seconds
+
+Building subspace for data_id 313...
+
+Subspace construction time: layer=14, data_id=313, region=base, time=1.00 seconds
+
+Subspace construction time: layer=14, data_id=313, region=repaired[0], time=1.02 seconds
+
+Building subspace for data_id 7812...
+
+Subspace construction time: layer=14, data_id=7812, region=base, time=1.05 seconds
+
+Subspace construction time: layer=14, data_id=7812, region=repaired[0], time=1.31 seconds
+
+Solving the LP model to get repaired parameters for layer 14...
+---------------------------------------------------------------
+
+LP model built (15.18 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 0.11 seconds
+
+LP solver found repaired parameters for layer 14. Updating the layer with repaired parameters.
+
+Evaluating the repaired DNN after repairing layer 14...
+-------------------------------------------------------
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 4500:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7, 1] (predicted class 9, competitor classes [7, 1]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 5653:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 12 (lb), 9 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 6000:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 98 (lb), 99 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 9, competitor classes [7]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2905:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 24 (lb), 17 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [8] (predicted class 7, competitor classes [9]) with LP solver in ascending margin order...
+
+Status check after repair for data id 1772:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [8] (predicted class 7, competitor classes [9]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2271:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 29 (lb), 23 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 313:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 48 (lb), 51 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 7812:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 92 (lb), 96 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 1, competitor classes [8]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Repaired DNN still has violations: 0 base region(s), 1 repaired region(s).
+
+Step 9: Layer 14 failed. Trying the next configured layer...
+
+
+==================================================
+Subrepair loop 4/4: modifiable layers [10, 12, 14]
+==================================================
+
+
+-------------------------------------
+Repairing layer 10 with strength 1000
+-------------------------------------
+
+Collecting safe subspaces for the repaired layer 10...
+------------------------------------------------------
+
+Building subspace for data_id 4500...
+
+Subspace construction time: layer=10, data_id=4500, region=base, time=2.40 seconds
+
+Building subspace for data_id 5653...
+
+Subspace construction time: layer=10, data_id=5653, region=base, time=2.39 seconds
+
+Subspace construction time: layer=10, data_id=5653, region=repaired[0], time=2.44 seconds
+
+Building subspace for data_id 6000...
+
+Subspace construction time: layer=10, data_id=6000, region=base, time=2.37 seconds
+
+Subspace construction time: layer=10, data_id=6000, region=repaired[0], time=4.13 seconds
+
+Building subspace for data_id 2905...
+
+Subspace construction time: layer=10, data_id=2905, region=base, time=2.43 seconds
+
+Subspace construction time: layer=10, data_id=2905, region=repaired[0], time=2.44 seconds
+
+Building subspace for data_id 1772...
+
+Subspace construction time: layer=10, data_id=1772, region=base, time=2.42 seconds
+
+Subspace construction time: layer=10, data_id=1772, region=repaired[0], time=4.17 seconds
+
+Building subspace for data_id 2271...
+
+Subspace construction time: layer=10, data_id=2271, region=base, time=2.43 seconds
+
+Subspace construction time: layer=10, data_id=2271, region=repaired[0], time=2.43 seconds
+
+Building subspace for data_id 313...
+
+Subspace construction time: layer=10, data_id=313, region=base, time=2.36 seconds
+
+Subspace construction time: layer=10, data_id=313, region=repaired[0], time=2.42 seconds
+
+Building subspace for data_id 7812...
+
+Subspace construction time: layer=10, data_id=7812, region=base, time=2.63 seconds
+
+Subspace construction time: layer=10, data_id=7812, region=repaired[0], time=4.31 seconds
+
+Solving the LP model to get repaired parameters for layer 10...
+---------------------------------------------------------------
+
+LP model built (10.43 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 0.11 seconds
+
+LP solver found repaired parameters for layer 10. Updating the layer with repaired parameters.
+
+Evaluating the repaired DNN after repairing layer 10...
+-------------------------------------------------------
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 4500:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7, 1] (predicted class 9, competitor classes [7, 1]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 5653:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 32 (lb), 42 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 6000:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 9, competitor classes [7]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2905:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 30 (lb), 31 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [8] (predicted class 7, competitor classes [9]) with LP solver in ascending margin order...
+
+Status check after repair for data id 1772:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 100 (lb), 99 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [8] (predicted class 7, competitor classes [9]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2271:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 25 (lb), 32 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 313:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 50 (lb), 60 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 7812:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 10...
+  The number of violating dimensions: 96 (lb), 90 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 1, competitor classes [8]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Repaired DNN still has violations: 0 base region(s), 1 repaired region(s).
+
+Step 10: Layer 10 failed. Trying the next configured layer...
+
+
+-------------------------------------
+Repairing layer 12 with strength 1000
+-------------------------------------
+
+Collecting safe subspaces for the repaired layer 12...
+------------------------------------------------------
+
+Building subspace for data_id 4500...
+
+Subspace construction time: layer=12, data_id=4500, region=base, time=1.53 seconds
+
+Building subspace for data_id 5653...
+
+Subspace construction time: layer=12, data_id=5653, region=base, time=1.55 seconds
+
+Subspace construction time: layer=12, data_id=5653, region=repaired[0], time=1.46 seconds
+
+Building subspace for data_id 6000...
+
+Subspace construction time: layer=12, data_id=6000, region=base, time=1.44 seconds
+
+Subspace construction time: layer=12, data_id=6000, region=repaired[0], time=1.49 seconds
+
+Building subspace for data_id 2905...
+
+Subspace construction time: layer=12, data_id=2905, region=base, time=1.52 seconds
+
+Subspace construction time: layer=12, data_id=2905, region=repaired[0], time=1.53 seconds
+
+Building subspace for data_id 1772...
+
+Subspace construction time: layer=12, data_id=1772, region=base, time=1.49 seconds
+
+Subspace construction time: layer=12, data_id=1772, region=repaired[0], time=2.29 seconds
+
+Building subspace for data_id 2271...
+
+Subspace construction time: layer=12, data_id=2271, region=base, time=1.51 seconds
+
+Subspace construction time: layer=12, data_id=2271, region=repaired[0], time=1.51 seconds
+
+Building subspace for data_id 313...
+
+Subspace construction time: layer=12, data_id=313, region=base, time=1.44 seconds
+
+Subspace construction time: layer=12, data_id=313, region=repaired[0], time=1.48 seconds
+
+Building subspace for data_id 7812...
+
+Subspace construction time: layer=12, data_id=7812, region=base, time=1.57 seconds
+
+Subspace construction time: layer=12, data_id=7812, region=repaired[0], time=2.37 seconds
+
+Solving the LP model to get repaired parameters for layer 12...
+---------------------------------------------------------------
+
+LP model built (12.58 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 1.99 seconds
+
+LP solver found repaired parameters for layer 12. Updating the layer with repaired parameters.
+
+Evaluating the repaired DNN after repairing layer 12...
+-------------------------------------------------------
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 4500:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7, 1] (predicted class 9, competitor classes [7, 1]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 5653:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 3 (lb), 4 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 6000:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 44 (lb), 60 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 9, competitor classes [7]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2905:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 19 (lb), 26 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [8] (predicted class 7, competitor classes [9]) with LP solver in ascending margin order...
+
+Status check after repair for data id 1772:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [8] (predicted class 7, competitor classes [9]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2271:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 23 (lb), 26 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 313:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 41 (lb), 47 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 7812:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 12...
+  The number of violating dimensions: 99 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 1, competitor classes [8]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Repaired DNN still has violations: 0 base region(s), 1 repaired region(s).
+
+Step 11: Layer 12 failed. Trying the next configured layer...
+
+
+-------------------------------------
+Repairing layer 14 with strength 1000
+-------------------------------------
+
+Collecting safe subspaces for the repaired layer 14...
+------------------------------------------------------
+
+Building subspace for data_id 4500...
+
+Subspace construction time: layer=14, data_id=4500, region=base, time=1.04 seconds
+
+Building subspace for data_id 5653...
+
+Subspace construction time: layer=14, data_id=5653, region=base, time=1.03 seconds
+
+Subspace construction time: layer=14, data_id=5653, region=repaired[0], time=1.01 seconds
+
+Building subspace for data_id 6000...
+
+Subspace construction time: layer=14, data_id=6000, region=base, time=1.00 seconds
+
+Subspace construction time: layer=14, data_id=6000, region=repaired[0], time=1.28 seconds
+
+Building subspace for data_id 2905...
+
+Subspace construction time: layer=14, data_id=2905, region=base, time=1.03 seconds
+
+Subspace construction time: layer=14, data_id=2905, region=repaired[0], time=1.03 seconds
+
+Building subspace for data_id 1772...
+
+Subspace construction time: layer=14, data_id=1772, region=base, time=1.02 seconds
+
+Subspace construction time: layer=14, data_id=1772, region=repaired[0], time=1.29 seconds
+
+Building subspace for data_id 2271...
+
+Subspace construction time: layer=14, data_id=2271, region=base, time=1.02 seconds
+
+Subspace construction time: layer=14, data_id=2271, region=repaired[0], time=1.02 seconds
+
+Building subspace for data_id 313...
+
+Subspace construction time: layer=14, data_id=313, region=base, time=1.00 seconds
+
+Subspace construction time: layer=14, data_id=313, region=repaired[0], time=1.01 seconds
+
+Building subspace for data_id 7812...
+
+Subspace construction time: layer=14, data_id=7812, region=base, time=1.05 seconds
+
+Subspace construction time: layer=14, data_id=7812, region=repaired[0], time=1.31 seconds
+
+Solving the LP model to get repaired parameters for layer 14...
+---------------------------------------------------------------
+
+LP model built (15.25 seconds). Starting optimization...
+
+LP optimization completed.
+  time: 0.11 seconds
+
+LP solver found repaired parameters for layer 14. Updating the layer with repaired parameters.
+
+Evaluating the repaired DNN after repairing layer 14...
+-------------------------------------------------------
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 4500:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 9, competitor classes [7]) with LP solver in ascending margin order...
+  Repaired region is still violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 5653:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 9 (lb), 8 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 6000:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 100 (lb), 100 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 9, competitor classes [7]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2905:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 10 (lb), 11 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [8] (predicted class 7, competitor classes [9]) with LP solver in ascending margin order...
+
+Status check after repair for data id 1772:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 100 (lb), 99 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [8] (predicted class 7, competitor classes [9]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 2271:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 9 (lb), 16 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 313:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 39 (lb), 47 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  No violation detected by backsubstitution or dual optimization.
+  Repaired region is no longer violating.
+
+Checking base region on the whole repaired DNN
+
+  base region ...
+  No violation detected by backsubstitution or dual optimization.
+
+Status check after repair for data id 7812:
+  Base region is still satisfying.
+
+Checking repaired region 1/1 at repaired layer 14...
+  The number of violating dimensions: 90 (lb), 96 (ub)
+
+Checking repaired region 1/1 on the whole repaired DNN...
+  Potential violation detected by backsubstitution/dual optimization. Checking spec dimensions [7] (predicted class 1, competitor classes [8]) with LP solver in ascending margin order...
+  Repaired region is no longer violating.
+
+Repaired DNN still has violations: 0 base region(s), 1 repaired region(s).
+
+Step 12: Layer 14 failed. Trying the next configured layer...
+
+Total repair time: 691.83 seconds
+
+Subrepair loops completed: 4
+
+Total steps: 12
+
+Repair failed. No repaired DNN to evaluate.
+
+---------------------------------
+=== Summary of Repair Results ===
+---------------------------------
+
+Run 18: Repair failed. No accuracy results.

@@ -1,0 +1,34 @@
+attack:
+  pgd_order: after
+  pgd_restarts: 10000
+bab:
+  branching:
+    candidates: 3
+    input_split:
+      attack_patience: 80
+      enable: true
+      enhanced_bound_patience: 20
+      enhanced_bound_prop_method: alpha-crown
+      enhanced_branching_method: sb
+      sb_coeff_thresh: 0.01
+    method: naive
+general:
+  enable_incomplete_verification: false
+  loss_reduction_func: max
+  root_path: ../../vnncomp2023_benchmarks/benchmarks/acasxu
+model:
+  input_shape:
+  - -1
+  - 5
+  name: acas_xu
+  path: /data/home/mjnn/majianan/ProvRepair/result/global_safety/Ours_refine_score/n59_repair.pth
+solver:
+  alpha-crown:
+    iteration: 10
+    share_alphas: true
+  batch_size: 1000
+  beta-crown:
+    iteration: 10
+  bound_prop_method: crown
+specification:
+  vnnlib_path: complete_verifier/docs/prop_2.vnnlib
